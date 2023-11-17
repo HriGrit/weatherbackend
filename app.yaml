@@ -1,0 +1,10 @@
+runtime: nodejs
+env: flex
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
+
+env_variables:
+  NODE_ENV: "production"
+  API_KEY: "59b75765d73b8a74d2baba3f0b5458b2"
