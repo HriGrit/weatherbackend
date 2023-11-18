@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 // if navigator location succesful
 // zip call is for lat and long
-app.get("/zip", async (req, res) => {
+app.post("/zip", async (req, res) => {
 	// http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}
 	const { lat, long } = req.body;
 	console.log(lat, long);
