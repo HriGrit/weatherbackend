@@ -16,12 +16,7 @@ const cors = require("cors");
 
 app.use(
 	cors({
-		origin: [
-			"http://localhost:5173",
-			"https://weather-reporter-acne.vercel.app", // Ensure no trailing slash
-		],
-		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-		allowedHeaders: ["Content-Type", "Authorization"],
+		origin: "http://localhost:5173",
 	})
 );
 
