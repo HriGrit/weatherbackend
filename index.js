@@ -6,8 +6,10 @@ const cors = require("cors");
 require("dotenv").config();
 
 const corsOptions = {
-	origin: "*", // or use '*' to allow any origin
+	origin: "http://localhost:5173", // or use '*' to allow any origin
 	methods: ["GET", "POST", "DELETE"], // or use specific methods
+	credentials: true, // enable set cookie
+	allowedHeaders: ["Content-Type", "Authorization"], // or specify headers to allow
 };
 
 app.use(cors(corsOptions));
