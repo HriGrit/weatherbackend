@@ -6,7 +6,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const corsOptions = {
-	origin: "http://localhost:5173/", // or use '*' to allow any origin
+	origin: "http://localhost:5173", // or use '*' to allow any origin
 	methods: ["GET", "POST", "DELETE"], // or use specific methods
 	credentials: true, // enable set cookie
 	allowedHeaders: ["Content-Type", "Authorization"], // or specify headers to allow
@@ -15,6 +15,15 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+	res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept"
+	);
+	next();
+});
 
 app.get("/", (req, res) => {
 	console.log(process.env.API_KEY);
