@@ -22,12 +22,6 @@ app.use(
 		],
 		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 		allowedHeaders: ["Content-Type", "Authorization"],
-		header: {
-			"Access-Control-Allow-Origin":
-				"https://weather-reporter-acne.vercel.app",
-			"Access-Control-Allow-Headers":
-				"Origin, X-Requested-With, Content-Type, Accept",
-		},
 	})
 );
 
