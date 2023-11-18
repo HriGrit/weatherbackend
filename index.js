@@ -12,14 +12,19 @@ require("dotenv").config();
 // 	allowedHeaders: ["Content-Type", "Authorization"], // or specify headers to allow
 // };
 
+const cors = require("cors");
+
 app.use(
 	cors({
 		origin: [
 			"http://localhost:5173",
-			"https://weather-reporter-acne.vercel.app/",
+			"https://weather-reporter-acne.vercel.app", // Ensure no trailing slash
 		],
+		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+		allowedHeaders: ["Content-Type", "Authorization"],
 	})
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
