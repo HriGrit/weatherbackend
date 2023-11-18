@@ -5,7 +5,13 @@ const cors = require("cors");
 
 require("dotenv").config();
 
-app.use(cors());
+const corsOptions = {
+	origin: "http://localhost:5173", // or use '*' to allow any origin
+	methods: "POST", // or ['GET', 'POST', 'DELETE', etc] if you want to be specific
+	allowedHeaders: ["Content-Type"], // if you need specific headers, add them here
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
