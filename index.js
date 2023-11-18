@@ -14,7 +14,10 @@ require("dotenv").config();
 
 app.use(
 	cors({
-		origin: "http://localhost:5173",
+		origin: [
+			"http://localhost:5173",
+			"https://weather-reporter-acne.vercel.app/",
+		],
 	})
 );
 app.use(express.json());
