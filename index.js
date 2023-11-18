@@ -6,9 +6,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 const corsOptions = {
-	origin: "http://localhost:5173", // or use '*' to allow any origin
-	methods: "POST", // or ['GET', 'POST', 'DELETE', etc] if you want to be specific
-	allowedHeaders: ["Content-Type"], // if you need specific headers, add them here
+	origin: "*", // or use '*' to allow any origin
+	methods: ["GET", "POST", "DELETE"], // or use specific methods
 };
 
 app.use(cors(corsOptions));
